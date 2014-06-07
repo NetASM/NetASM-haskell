@@ -5,4 +5,5 @@ NetASM is a network assembler that takes high-level SDN languages (NetKAT, P4, e
 Contact Information
 ===================
 Muhammad Shahbaz (shahbaz  at cc.gatech.edu)
+
 Nick Feamster    (feamster at cc.gatech.edu)
