@@ -3,7 +3,7 @@
 --  https://github.storm.gatech.edu/NetASM
 --
 --  File:
---        SimpleMACLearning/Code.hs
+--        StatefulMACLearning/Code.hs
 --
 --  Project:
 --        NetASM: A Network Assembly for Orchestrating Programmable Network Devices
@@ -31,7 +31,7 @@
 --        License along with the NetASM source package.  If not, see
 --        http://www.gnu.org/licenses/.
 
-module Apps.SimpleMACLearning.Code where
+module Apps.StatefulMACLearning.Code where
 
 import Utils.Map
 import Core.Language

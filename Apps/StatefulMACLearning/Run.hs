@@ -31,12 +31,12 @@
 --        License along with the NetASM source package.  If not, see
 --        http://www.gnu.org/licenses/.
 
-module Apps.SimpleMACLearning.Run where
+module Apps.StatefulMACLearning.Run where
 
 import Utils.Map
 import Core.Language
 import Core.PacketParser
-import Apps.SimpleMACLearning.Code
+import Apps.StatefulMACLearning.Code
 
 --------------------------
 -- Simple MAC Learning ---
@@ -82,27 +82,7 @@ emulateEx = emulate(ic, is, tc)
 profileEx :: String 
 profileEx = profile(ic, is, tc)
 
--- Debug
-debugEx :: String
-debugEx = output
-        ++output0
-        ++output1
-        ++output2
-        ++output3
-  where
-    (_, rs, ts) = debugInit(ic)
-    output = print'(([], rs, ts), 0)
-    ((h0', rs0, ts0), n0) = debugInput(HDR(h0), tc, ([], rs, ts))
-    output0 = print'((h0', rs0, ts0), n0)
-    ((h1', rs1, ts1), n1) = debugInput(HDR(h1), tc, ([], rs0, ts0))
-    output1 = print'((h1', rs1, ts1), n1)
-    ((h2', rs2, ts2), n2) = debugInput(HDR(h2), tc, ([], rs1, ts1))
-    output2 = print'((h2', rs2, ts2), n2)
-    ((h3', rs3, ts3), n3) = debugInput(HDR(h3), tc, ([], rs2, ts2))
-    output3 = print'((h3', rs3, ts3), n3)
-
 -- main
 main = do 
-        --print emulateEx
-        --print profileEx
-        putStrLn debugEx
+        print emulateEx
+        print profileEx
