@@ -38,9 +38,9 @@ import Core.Language
 import Core.PacketParser
 import Apps.StatefulMACLearner.Code
 
---------------------------
--- Simple MAC Learning ---
---------------------------
+---------------------------
+-- Stateful MAC Learner ---
+---------------------------
 
 -- Test header (a.k.a. packet) stream
 h0 = genHdr([("inport",     1)
@@ -71,8 +71,7 @@ h3 = genHdr([("inport",     2)
 is = [HDR(h0),
       HDR(h1), 
       HDR(h2), 
-      HDR(h3), 
-      HDR(h1)]
+      HDR(h3)]
 
 -- Emulate the code
 emulateEx :: [Hdr]

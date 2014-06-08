@@ -37,9 +37,9 @@ import Utils.Map
 import Core.Language
 import Core.PacketParser
 
---------------------------
--- Simple MAC Learning ---
---------------------------
+---------------------------
+-- Stateful MAC Learner ---
+---------------------------
 
 -- Table size
 t_s = 10
