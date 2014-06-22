@@ -35,7 +35,7 @@
 
 module Core.Language where
 
-import Prelude hiding (drop, id, del)
+import Prelude hiding (drop, id)
 import Data.Bits
 
 import Utils.List as Li
