@@ -106,8 +106,8 @@ data InitInstr =
 -- Topology Instructions.
 data TopoInstr =
     HLT                               -- Halt: end of code.
-  | LBL (Lbl)                         -- Label: lable (l) for jump and branch instructions.
-  | JMP (Lbl)                         -- Jump: jump control to lable (l).
+  | LBL (Lbl)                         -- Label: label (l) for jump and branch instructions.
+  | JMP (Lbl)                         -- Jump: jump control to label (l).
   -- Update instructions.
   -- -- register.
   | LDR     (Reg, Val)                -- Load register: load register (r) with value (v).
@@ -145,11 +145,11 @@ data TopoInstr =
   -- -- table.
   | BRTR    (Tbl, Reg, Lbl)           -- Branch on table at register: branch control to label (l) based on whether a pattern in table (t) is present in the header 
                                       -- and set the register (r) to matched index.
-  | BRTF    (Tbl, Fld, Lbl)           -- Branch on table at register: branch control to label (l) based on whether a pattern in table (t) is present in the header 
+  | BRTF    (Tbl, Fld, Lbl)           -- Branch on table at field: branch control to label (l) based on whether a pattern in table (t) is present in the header 
                                       -- and set the field (f) to matched index.
   | IBRTR   (Tbl, Reg, Lbl)           -- Branch on table at register: branch control to label (l) based on whether a pattern in table (t) is not present in the header 
                                       -- and set the register (r) to matched index.
-  | IBRTF   (Tbl, Fld, Lbl)           -- Branch on table at register: branch control to label (l) based on whether a pattern in table (t) is not present in the header 
+  | IBRTF   (Tbl, Fld, Lbl)           -- Branch on table at field: branch control to label (l) based on whether a pattern in table (t) is not present in the header 
                                       -- and set the field (f) to matched index.
   -- -- header fields.
   | BRF     (Fld, CmpOp, Val, Lbl)    -- if (f op v) -> l: branch control to label (l) if the result of the comparison on field (f) and value (v) is true.
