@@ -668,10 +668,17 @@ debugInput (HDR(h), c, (_, rs, ts))  = ((h', rs', ts'), n)
 -- Printer.
 print' :: (State, Int) -> String
 print' ((h, rs, ts), n) = 
-      "Header: "++show(h)++"\n\n"
-    ++"Registers: "++show(rs)++"\n\n"
-    ++"Tables: "++show(ts)++"\n\n"
-    ++"Profile (instructions executed): "++show(n)++"\n\n\n"
+      "Header: "++show(h)++"\n"
+    ++"Registers: "++show(rs)++"\n"
+    ++"Tables: "++show(ts)++"\n"
+    ++"Profile (instructions executed): "++show(n)++"\n\n"
+    
+-- Pretty Print
+prettyPrint :: [Hdr] -> String
+prettyPrint ([])   = ""
+prettyPrint (h:hs) = show h 
+                  ++ "\n" 
+                  ++ prettyPrint(hs)
 
 -- Constants.
 _1s :: Int

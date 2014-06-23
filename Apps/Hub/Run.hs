@@ -60,5 +60,5 @@ profileEx = profile([], is, c)
 
 -- Main
 main = do 
-        print emulateEx
-        print profileEx
+        putStrLn $ prettyPrint $ emulateEx
+        putStrLn profileEx

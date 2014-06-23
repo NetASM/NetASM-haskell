@@ -59,6 +59,6 @@ profileEx :: String
 profileEx = profile([], is, c)
 
 -- Main
-main = do
-        print emulateEx
-        print profileEx
+main = do 
+        putStrLn $ prettyPrint $ emulateEx
+        putStrLn profileEx
