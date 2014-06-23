@@ -84,4 +84,4 @@ profileEx = profile(ic, is, tc)
 -- main
 main = do 
         putStrLn $ prettyPrint $ emulateEx
-        putStrLn profileEx
+        putStrLn                 profileEx
