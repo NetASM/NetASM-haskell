@@ -44,7 +44,7 @@ import Apps.Hub.Code
 
 -- Test header (a.k.a packet) stream
 h0 = genHdr([("inport", 1), ("outport", 0)])
-h1 = genHdr([("inport", 1), ("outport", 0)])
+h1 = genHdr([("inport", 2), ("outport", 0)])
 
 -- Input sequence
 is = [HDR(h0), 
