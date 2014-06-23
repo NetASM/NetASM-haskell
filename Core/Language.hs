@@ -682,4 +682,4 @@ prettyPrint (h:hs) = show h
 
 -- Constants.
 _1s :: Int
-_1s = (2^32-1)
+_1s = (2^31-1)
