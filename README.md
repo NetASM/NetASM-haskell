@@ -211,28 +211,28 @@ The output is an updated list of headers, `h0` and `h1`. The Hub code sets the o
 Instruction | Description | Usage
 ----------- | ----------- | -----
 **MKR (Reg, Val)** | **Make Register:** make a new register (`r`) with default value (`v`) | **MKR(“r0”, 0):** make a register `r0` with default value of 0
-**MKT (Tbl[^footnote1], Tbl[^footnote2])** | **Make Table:** Make a new dynamic table (`t`) and load it with content from static table (`t0`) |  **MKT(t0, v0):** make a new dynamic table `t0` and load it with defaults values `v0`. `t0` and `v0` are defined using Dynamic and Static table types.
+**MKT (Tbl, Tbl)** | **Make Table:** Make a new dynamic table (`t`) and load it with content from static table (`t0`) |  **MKT(t0, v0):** make a new dynamic table `t0` and load it with defaults values `v0`. `t0` and `v0` are defined using Dynamic and Static table types.
 
-[^footnote1]: ``` haskell Tbl = Dynamic (String, (Int, [Fld])) ```
-[^footnote2]: ``` haskell Tbl = Static  ([Ptrn]) ```
+> ``` haskell Tbl = Dynamic (String, (Int, [Fld])) ```
+> ``` haskell Tbl = Static  ([Ptrn]) ```
 
 ### Topology Instructions
 
 Instruction | Description | Usage
 ----------- | ----------- | -----
 **HLT** | **Halt:** Indicates the end of topology code | see Hub example above
-**OPF (Fld, Fld, Op[^footnote3], Val)** | **f0 = f1 op v:** apply operation (`op`) on field (`f1`) and value (`v`) and store it in field (`f0`) | **OPF(“outport”, “inport”, Add, 1):** Add 1 to inport and store it in outport field
+**OPF (Fld, Fld, Op, Val)** | **f0 = f1 op v:** apply operation (`op`) on field (`f1`) and value (`v`) and store it in field (`f0`) | **OPF(“outport”, “inport”, Add, 1):** Add 1 to inport and store it in outport field
 **OPR (Reg, Reg, Op, Val)** | **r0 = r1 op v:** apply operation (`op`) on register (`r1`) and value (`v`) and store it in register (`r0`) | **OPF(“r0”, “r1”, Add, 1):** Add 1 to `r1` and store it in `r0` register
 **LDR (Reg, Val)** | **Load Register:** load register (`r`) with value (`v`) | **LDR(“r0”, 10):** Loads registers `r0` with value 10
 **LBL (Lbl)** | **Label:** label (`l`) for jump and branch instructions | **LBL(“l0”):** Creates a label `l0`
 **JMP (Lbl)** | **Jump:** jump control to label (`l`) | **JMP(“l0”):** Skips the instructions till the label
-**BRR (Reg, CmpOp[^footnote4], Val, Lbl)** | **if (r op v) then l else fallthrough:** branch control to label (`l`) if the result of the comparison on register (`r`) and value (`v`) is true else fall through to the next instruction | **BRR(“r0”, Gt, 10, “l0”):** Jump to label `l0`, if `r0` is greater than 10
+**BRR (Reg, CmpOp, Val, Lbl)** | **if (r op v) then l else fallthrough:** branch control to label (`l`) if the result of the comparison on register (`r`) and value (`v`) is true else fall through to the next instruction | **BRR(“r0”, Gt, 10, “l0”):** Jump to label `l0`, if `r0` is greater than 10
 **IBRTF (Tbl, Fld, Lbl)** | Branch control to label (`l`) if any pattern in table (`t`) is not present in the header, else, move to the next instruction and set the field (`f`) to matched index | **IBRTF(t0, “i”, “l0”):** Jump to label `l0` if any pattern in table `t0` does not match the header, else, move to the next instruction and set the field `i` to matched index
 **LDFTF (Tbl, Fld)** | **Load header with table at field:** load header with the table (`t`) at index field (`f`) | **LDFTF(t0, “i”):** Load header with contents of table `t0` at index value in field `i`
 **LDFTR (Tbl, Reg)** | **Load header with table at register:** load header with the table (`t`) at index register (`r`) | **LDFTF(t0, “r0”):** Load header with contents of table `t0` at index value in register `r0`
 
-[^footnote3]: ```haskell Op = Add | Sub | And | Or | Xor ```
-[^footnote4]: ```haskell CmpOp = Eq | Neq | Lt | Gt | Le | Ge ```
+> ```haskell Op = Add | Sub | And | Or | Xor ```
+> ```haskell CmpOp = Eq | Neq | Lt | Gt | Le | Ge ```
 
 ### Control Instructions
 
