@@ -192,7 +192,7 @@ $ cd ~/NetASM-haskell
 $ runhaskell Apps/Hub/Run.hs
 ```
 
-### Analysing the output of the Hub program
+### Analysing output of the Hub program
 
 ```
 [[("PID",(1,True)),("DRP",(0,True)),("inport",(1,True)),("outport",(2147483646,True))]
