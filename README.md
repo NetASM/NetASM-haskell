@@ -250,7 +250,7 @@ Instruction | Description | Usage
 
 
 # Contact Information
-- **Muhammad Shahbaz** 
-- **Nick Feamster** 
+- [**Muhammad Shahbaz**](www.cs.princeton.edu/~mshahbaz/)
+- [**Nick Feamster**](www.cs.princeton.edu/~feamster/)
 
-**Email:** lastname @ cs.princeton.edu
+**Email:** lastname@cs.princeton.edu
