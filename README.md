@@ -13,7 +13,7 @@ The NetASM instruction set has three types of instructions:
  - Topology: to define how the packet is traversed and processed in the data plane
  - Control: to provide an external control to populate the states (i.e., over OpenFlow or other interfaces)
 
-The syntax of the NetASM language is defined in the Core/Language.hs file.
+The syntax of the NetASM language is defined in the `Core/Language.hs` file.
 
 ## Setting up NetASM on your VM
 NetASM is based on Haskell, so before continuing with the installation process make sure that the Haskell platform is setup on your VM.
