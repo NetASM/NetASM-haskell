@@ -251,3 +251,6 @@ Instruction | Description | Usage
 - [Nick Feamster](http://www.cs.princeton.edu/~feamster/)
 
 **Email:** lastname @ cs.princeton.edu
+
+---
+Learning Haskell: http://learnyouahaskell.com
