@@ -213,8 +213,10 @@ Instruction | Description | Usage
 **MKR (Reg, Val)** | **Make Register:** make a new register (`r`) with default value (`v`) | **MKR(“r0”, 0):** make a register `r0` with default value of 0
 **MKT (Tbl, Tbl)** | **Make Table:** Make a new dynamic table (`t`) and load it with content from static table (`t0`) |  **MKT(t0, v0):** make a new dynamic table `t0` and load it with defaults values `v0`. `t0` and `v0` are defined using Dynamic and Static table types.
 
-> ``` haskell Tbl = Dynamic (String, (Int, [Fld])) ```
-> ``` haskell Tbl = Static  ([Ptrn]) ```
+> ``` haskell
+> Tbl = Dynamic (String, (Int, [Fld]))
+> Tbl = Static  ([Ptrn]) 
+> ```
 
 ### Topology Instructions
 
@@ -231,8 +233,10 @@ Instruction | Description | Usage
 **LDFTF (Tbl, Fld)** | **Load header with table at field:** load header with the table (`t`) at index field (`f`) | **LDFTF(t0, “i”):** Load header with contents of table `t0` at index value in field `i`
 **LDFTR (Tbl, Reg)** | **Load header with table at register:** load header with the table (`t`) at index register (`r`) | **LDFTF(t0, “r0”):** Load header with contents of table `t0` at index value in register `r0`
 
-> ```haskell Op = Add | Sub | And | Or | Xor ```
-> ```haskell CmpOp = Eq | Neq | Lt | Gt | Le | Ge ```
+> ```haskell 
+> Op = Add | Sub | And | Or | Xor 
+> CmpOp = Eq | Neq | Lt | Gt | Le | Ge 
+> ```
 
 ### Control Instructions
 
