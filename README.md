@@ -203,6 +203,7 @@ $ runhaskell Apps/Hub/Run.hs
 
 The output is an updated list of headers, `h0` and `h1`. The Hub code sets the outport field (bitmap) to all ones except the incoming port, effectively, flooding the packet on all ports except the incoming one. Also, notice that there are two extra fields in the header: `PID` and `DRP`. These are special fields and can’t be modified by the programmer, directly. The `PID` field contains the `ID` of the current instruction that is processing the header. The `DRP` field indicates whether the packet is to be dropped or not. The last line shows the number of assembly instructions executed during this run.
 
+> The `outport` field is a 31-bit wide bitmap, where each bit corresponds to an egress interface. If all bits are set to 1 then, in hex, it’s shown as: `7FFFFFFF`, meaning send packets to all egress interfaces. Now, in the case of flood, when the packet comes in from the first input port then the flood value for `outport` field will be: `7FFFFFFE` i.e., last bit set to 0 which in decimal notation is shown as `2147483646`.
 
 ## APPENDIX: List of NetASM Instruction Set
 
