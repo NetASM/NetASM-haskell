@@ -246,13 +246,9 @@ Instruction | Description | Usage
 **WRR (Reg, Val)** | **Write Register:** write register (`r`) with value (`v`) | **WRR(“r0”, 10):** Write register `r0` with default value of 10
 **WRT (Tbl, Ptrn, Val)** | **Write table with pattern [(f,v)] at index value:** write table (`t`) with pattern (`p`) at index value (`v`) | **WRT(t0, [("inport", 1)], 1):** Write the pattern, `inport=1`, in table `t0` at index value 1
 
-
-
-
 # Contact Information
-- [**Muhammad Shahbaz**](www.cs.princeton.edu/~mshahbaz)
-- [**Nick Feamster**](www.cs.princeton.edu/~feamster)
-- [Visit GitHub!](www.github.com)
+- [Muhammad Shahbaz](www.cs.princeton.edu/~mshahbaz)
+- [Nick Feamster](www.cs.princeton.edu/~feamster)
 
 
 **Email:** lastname@cs.princeton.edu
