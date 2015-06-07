@@ -253,4 +253,4 @@ Instruction | Description | Usage
 - **Muhammad Shahbaz** 
 - **Nick Feamster** 
 
-**Email:** lastname@cs.princeton.edu
+**Email:** lastname @ cs.princeton.edu
